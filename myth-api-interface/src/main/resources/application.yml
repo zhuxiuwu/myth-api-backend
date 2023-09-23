@@ -1,0 +1,9 @@
+server:
+  port: 8123
+  servlet:
+    context-path: /api
+#myth:
+#  api:
+#    client:
+#      access-key: chuan
+#      secret-key: yushu

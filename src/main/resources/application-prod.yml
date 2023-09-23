@@ -1,6 +1,32 @@
 spring:
+  application:
+    name: myth-api-backend
+  # DataSource Config
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/my_db
-    username: root
-    password: 123456
+    url: "jdbc:mysql://43.138.84.102:3306/yuapi?useUnicode=true&characterEncoding=utf8&useSSL=false"
+    username: yuapi
+    password: "zxcvbnm"
+
+dubbo:
+  application:
+    name: dubbo-springboot-demo-provider
+  protocol:
+    name: dubbo
+    port: -1
+  registry:
+    id: nacos-registry
+    address: nacos://10.0.8.13:8848
+  config-center:
+    timeout: 40000
+
+server:
+  address: 0.0.0.0
+  port: 9092
+  servlet:
+    context-path: /api
+    # cookie 30 天过期
+    session:
+      cookie:
+        max-age: 2592000
+        domain: 43.138.84.102

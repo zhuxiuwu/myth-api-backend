@@ -1,8 +1,8 @@
 -- 创建库
-create database if not exists my_db;
+create database if not exists yuapi;
 
 -- 切换库
-use my_db;
+use yuapi;
 
 -- 用户表
 create table if not exists user
@@ -17,6 +17,8 @@ create table if not exists user
     createTime   datetime     default CURRENT_TIMESTAMP not null comment '创建时间',
     updateTime   datetime     default CURRENT_TIMESTAMP not null on update CURRENT_TIMESTAMP comment '更新时间',
     isDelete     tinyint      default 0                 not null comment '是否删除',
+    `accessKey`  VARCHAR(512)                           NOT NULL COMMENT 'accessKey',
+    `secretKey`  VARCHAR(512)                           NOT NULL COMMENT 'secretKey',
     constraint uni_userAccount
         unique (userAccount)
 ) comment '用户';

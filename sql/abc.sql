@@ -1,0 +1,1 @@
+insert into user  (userAccount,userRole, userPassword,accessKey,secretKey) values ('mythapi','admin','cc635e8d36fa1b57130c04d311a7174a','5378511d780dd7b6ec0f1b9c360acc5c','1ae4c483ca6eb17eb2f5466cccf5ddff');

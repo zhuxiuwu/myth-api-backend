@@ -1,0 +1,29 @@
+# 公共配置文件
+server:
+  port: 8090
+logging:
+  level:
+    org:
+      springframework:
+        cloud:
+          gateway: trace
+
+spring:
+  cloud:
+    gateway:
+      routes:
+        - id: api_route
+          uri: http://43.138.84.102:8123
+          predicates:
+            - Path=/api/**
+
+dubbo:
+  application:
+    name: dubbo-springboot-demo-provider
+  protocol:
+    name: dubbo
+    port: -1
+  registry:
+    id: nacos-registry
+    address: nacos://10.0.8.13:8848
+
